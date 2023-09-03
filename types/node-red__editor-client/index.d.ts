@@ -33,7 +33,7 @@ declare namespace editorClient {
         validate?: ((this: NodeInstance<TInstProps>, val: string) => boolean) | undefined;
         /** If this property is a pointer to a configuration node, this identifies the type of the node. */
         type?: string | undefined;
-    }
+    }on
 
     /**
      * Properties definitions (`defaults` object)
@@ -239,6 +239,10 @@ declare namespace editorClient {
          * Read more: https://nodered.org/docs/creating-nodes/properties#custom-edit-behaviour
          */
         onpaletteremove?: ((this: NodeInstance<TInstProps>) => void) | undefined;
+        /**
+         * Called when the node type is dragged into the workspace.
+         */
+        onadd?: ((this: NodeInstance<TInstProps>) => void) | undefined;
     }
 
     interface CommSubscriber {
